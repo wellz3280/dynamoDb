@@ -1,0 +1,31 @@
+version: "3.5"
+
+networks:
+    application:
+        name: application
+
+services:
+  php:
+      image: bref/php-81-fpm-dev
+      container_name: php
+      volumes:
+          - .:/var/task:ro
+      networks:
+          - application
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+        - "127.0.0.1:4510-4559:4510-4559"
+        - "127.0.0.1:4566:4566"
+    environment:
+      - SERVICES=dynamodb
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - HOST_TMP_FOLDER=${TMPDIR}
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - application
