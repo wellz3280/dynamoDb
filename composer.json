@@ -1,0 +1,15 @@
+{
+    "name": "weliton/aws-dyname-db",
+    "autoload": {
+        "psr-4": {
+            "AwsDynamoDb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "weliton",
+            "email": "welingtonzsilva@gmail.com"
+        }
+    ],
+    "require": {}
+}
