@@ -22,6 +22,16 @@ final class Movie extends Entity
         $this->caption = $caption;
     }
 
+    public static function fromArray(array $movie = []): self
+    {
+        return new self(
+            $movie['id'],
+            $movie['category'],
+            $movie['title'],
+            $movie['caption'],
+        );
+    }
+
     public function getClassName(): string
     {
         return 'Movie';
