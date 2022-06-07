@@ -12,7 +12,7 @@ final class Movie extends Entity
 
     private string $title;
 
-    private string $caption; //subtitulo
+    private string $caption;
 
     public function __construct(int $id, string $category, string $title, string $caption)
     {
@@ -34,7 +34,7 @@ final class Movie extends Entity
 
     public function getClassName(): string
     {
-        return 'Movie';
+        return 'movie';
     }
 
     public function getTitle(): string
