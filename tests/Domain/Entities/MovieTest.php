@@ -27,6 +27,26 @@ final class MovieTest extends TestCase
         self::assertSame($caption, $movie->getCaption());
     }
 
+    /**
+     * should instance movie static method
+     * @dataProvider movieProvider
+     * @test
+    */
+    public function shouldInstanceMovieStaticMethod(int $id, string $category, string $title, string $caption): void
+    {
+        $movie = Movie::fromArray([
+            'id' => $id,
+            'category' => $category,
+            'title' => $title,
+            'caption' => $caption,
+        ]);
+
+        self::assertSame($id, $movie->getId());
+        self::assertSame($category, $movie->getCategory());
+        self::assertSame($title, $movie->getTitle());
+        self::assertSame($caption, $movie->getCaption());
+    }
+
     public function movieProvider(): array
     {
     return [
