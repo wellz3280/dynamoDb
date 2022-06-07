@@ -7,7 +7,7 @@ networks:
 services:
   php:
       image: bref/php-81-fpm-dev
-      container_name: php
+      container_name: php_dynamo
       volumes:
           - .:/var/task:ro
       networks:
