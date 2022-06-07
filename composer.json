@@ -17,6 +17,7 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "aws/aws-sdk-php": "^3.224"
     }
 }
